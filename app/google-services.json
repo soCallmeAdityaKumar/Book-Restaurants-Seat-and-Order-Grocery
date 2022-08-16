@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "914143193031",
+    "project_id": "grocery-and-restaurants",
+    "storage_bucket": "grocery-and-restaurants.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:914143193031:android:1dc42b05f71d903cf85be2",
+        "android_client_info": {
+          "package_name": "com.example.groceryandrestaurantseatbooking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "914143193031-j6bsi8q3rggv75tksm8112em05f27gh5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD20JtYTwPzK2qvS1E8O-SrIzAEVmzpsFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "914143193031-j6bsi8q3rggv75tksm8112em05f27gh5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

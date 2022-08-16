@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FF85A1"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/RegisterTextView"
+        android:layout_width="285dp"
+        android:textColor="#FAE0E4"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:text="Register Customer"
+        android:textAlignment="center"
+        android:textSize="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/NameEditText"
+        android:layout_width="262dp"
+        android:background="@drawable/round_edittext"
+        android:layout_height="45dp"
+        android:hint="Name"
+        android:layout_marginTop="60dp"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegisterTextView" />
+
+    <EditText
+        android:id="@+id/EmailEditText"
+        android:layout_width="262dp"
+        android:layout_height="45dp"
+        android:hint="Email Id"
+        android:background="@drawable/round_edittext"
+        android:layout_marginTop="30dp"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/NameEditText" />
+
+    <EditText
+        android:id="@+id/PhoneNumberEditText"
+        android:layout_width="262dp"
+        android:hint="Phone Number"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:background="@drawable/round_edittext"
+        android:textSize="25dp"
+        android:layout_height="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EmailEditText" />
+
+    <EditText
+        android:id="@+id/PasswordEditText"
+        android:hint="Password"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:background="@drawable/round_edittext"
+        android:layout_width="262dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PhoneNumberEditText" />
+
+    <Button
+        android:id="@+id/Registerbutton"
+        android:layout_width="200dp"
+        android:layout_height="44dp"
+        android:text="Register"
+        android:backgroundTint="#a53860"
+        android:background="@drawable/round_button"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordEditText" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="Already have an account?Login"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Registerbutton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Business"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
