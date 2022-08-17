@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.groceryandrestaurantseatbooking.MainActivity
@@ -27,6 +28,11 @@ class Register:AppCompatActivity() {
         val passwordEdit:EditText=findViewById(R.id.PasswordEditText)
         val nameEdit:EditText=findViewById(R.id.NameEditText)
         val registerButton=findViewById<Button>(R.id.Registerbutton)
+        val loginTextView:TextView=findViewById(R.id.LoginTextView)
+
+        loginTextView.setOnClickListener {
+            startActivity(Intent(this,LoginUser::class.java))
+        }
 
         registerButton.setOnClickListener {
             if(emailEdit.text.isEmpty()){

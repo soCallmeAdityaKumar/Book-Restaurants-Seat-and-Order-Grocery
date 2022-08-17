@@ -6,8 +6,12 @@
         <entry key="..\:/Users/adi54/AndroidStudioProjects/GroceryandRestaurantseatBooking/app/src/main/res/drawable/round.xml" value="0.2495" />
         <entry key="..\:/Users/adi54/AndroidStudioProjects/GroceryandRestaurantseatBooking/app/src/main/res/drawable/round_button.xml" value="0.2495" />
         <entry key="..\:/Users/adi54/AndroidStudioProjects/GroceryandRestaurantseatBooking/app/src/main/res/drawable/round_edittext.xml" value="0.2495" />
+        <entry key="..\:/Users/adi54/AndroidStudioProjects/GroceryandRestaurantseatBooking/app/src/main/res/layout/activity_main.xml" value="0.176" />
+        <entry key="..\:/Users/adi54/AndroidStudioProjects/GroceryandRestaurantseatBooking/app/src/main/res/layout/fragment_grocery.xml" value="0.2" />
+        <entry key="..\:/Users/adi54/AndroidStudioProjects/GroceryandRestaurantseatBooking/app/src/main/res/layout/fragment_restaurant.xml" value="0.2359375" />
         <entry key="..\:/Users/adi54/AndroidStudioProjects/GroceryandRestaurantseatBooking/app/src/main/res/layout/login_user.xml" value="0.25" />
         <entry key="..\:/Users/adi54/AndroidStudioProjects/GroceryandRestaurantseatBooking/app/src/main/res/layout/user_register.xml" value="0.152" />
+        <entry key="..\:/Users/adi54/AndroidStudioProjects/GroceryandRestaurantseatBooking/app/src/main/res/menu/bottom_nav.xml" value="0.1" />
       </map>
     </option>
   </component>
