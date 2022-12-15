@@ -14,7 +14,7 @@
             android:exported="true">
 
         </activity>
-        <activity android:name=".Authentication.LoginUser"
+        <activity android:name=".Authentication.User.LoginUser"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Authentication.Register"
+        <activity android:name=".Authentication.User.Register"
             android:exported="true">
 
         </activity>

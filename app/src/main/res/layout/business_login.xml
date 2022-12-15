@@ -6,75 +6,64 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/LoginBusinessText"
         android:layout_width="285dp"
-        android:textColor="#FAE0E4"
         android:layout_height="wrap_content"
-        android:layout_marginTop="110dp"
-        android:text="Login Customer"
+        android:text="Login Businessman"
         android:textAlignment="center"
+        android:textColor="#FAE0E4"
         android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22000003" />
 
     <EditText
-        android:id="@+id/LoginEmailEdit"
+        android:id="@+id/LoginEmailBusinessEdit"
         android:layout_width="262dp"
-        android:background="@drawable/round_edittext"
         android:layout_height="63dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/round_edittext"
         android:hint="Email"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/LoginBusinessText" />
 
     <EditText
-        android:id="@+id/LoginPasswordEdit"
+        android:id="@+id/LoginPasswordBusinessEdit"
         android:layout_width="262dp"
         android:layout_height="63dp"
-        android:layout_marginTop="63dp"
-        android:hint="Password"
+        android:layout_marginTop="50dp"
         android:background="@drawable/round_edittext"
+        android:hint="Password"
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginEmailEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/LoginEmailBusinessEdit" />
 
     <Button
-        android:id="@+id/LoginUserButton"
+        android:id="@+id/LoginBusinessButton"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/round_button"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/round_button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginPasswordEdit" />
+        app:layout_constraintTop_toBottomOf="@+id/LoginPasswordBusinessEdit" />
 
     <TextView
-        android:id="@+id/SignupTextView"
+        android:id="@+id/SignupBusinessTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:textColor="#FAE0E4"
+        android:layout_marginTop="25dp"
         android:text="Don't have an account? Signup"
+        android:textColor="#FAE0E4"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LoginUserButton" />
-
-    <TextView
-        android:id="@+id/BusinessLoginText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Business"
-        android:textSize="20dp"
-        android:textColor="#FAE0E4"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SignupTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/LoginBusinessButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
