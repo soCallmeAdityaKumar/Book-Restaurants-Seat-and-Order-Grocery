@@ -2,4 +2,5 @@
     <string name="app_name">Grocery and Restaurant seat Booking</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="past_order_business_grocery">Past Order Business Grocery</string>
 </resources>
