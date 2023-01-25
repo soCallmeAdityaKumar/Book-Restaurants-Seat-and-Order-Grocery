@@ -26,6 +26,39 @@
             android:exported="true">
 
         </activity>
+        <activity android:name=".Authentication.Business.LoginBusiness"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".Authentication.Business.BusinessRegister"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".GroceryBusiness.groceryBusiness"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".GroceryBusiness.AddGroceryToBusiness"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".RestaurantBusiness.RestaurantBusiness"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".RestaurantBusiness.AddMenuToBusiness"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".Customer.BookGroceryCustomer"
+            android:exported="true">
+
+        </activity>
+        <activity android:name=".Customer.BookyourSeat"
+            android:exported="true">
+
+        </activity>
+
     </application>
 
 </manifest>

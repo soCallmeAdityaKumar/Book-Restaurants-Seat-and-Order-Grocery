@@ -1,61 +1,88 @@
 package com.example.groceryandrestaurantseatbooking.Customer
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.ContentView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.groceryandrestaurantseatbooking.GroceryBusiness.Grocery
 import com.example.groceryandrestaurantseatbooking.R
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [RestaurantFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RestaurantFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var recyclerView: RecyclerView
+    lateinit var menuList:ArrayList<Grocery>
+    lateinit var restaurantEmail:ArrayList<String>
+    val db= Firebase.firestore
+    private fun loadData() {
+        restaurantEmail= arrayListOf()
+        db.collection("UserInfo").document("BusinessAccounts").collection("BusinessAccounts").get().addOnSuccessListener {
+            for(data in it.documents){
+                if(data.get("Restaurant") == true){
+                    Log.d("Email","email is ${data.get("BusinessEmail")}")
+                    restaurantEmail.add(data.get("BusinessEmail").toString())
+                }
+            }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            Log.d("position","Outside of for loop of loadData")
+            displayMenuData()
+
+        }.addOnFailureListener {
+            Log.d("Customer","failed to  Load Data to customer")
         }
     }
+
+    private fun displayMenuData() {
+        Log.d("position","Inside display Grocery Data")
+        menuList= arrayListOf()
+        for(data in restaurantEmail){
+            Log.d("data","email is from $data")
+            db.collection("Restaurant").document(data).collection("CurrentMenu").get().addOnSuccessListener {
+                if(!it.isEmpty){
+                    for(data in it.documents){
+                        Log.d("data","${data.get("ItemName")}")
+                        val grocery=Grocery(data.get("ItemName").toString(),data.get("ItemDesc").toString(),data.get("ItemPrice").toString(),data.get("BusinessEmail").toString())
+                        menuList.add(grocery)
+                    }
+                }
+            }.addOnFailureListener {
+                Log.d("Failed","Failed to load data from ")
+            }
+
+        }
+        Log.d("position","Outside of for loop of displayGroceryData")
+        val cutomerRecyclerAdapter=CutomerRecyclerAdapter(menuList)
+        recyclerView.adapter=cutomerRecyclerAdapter
+        cutomerRecyclerAdapter.setOnItemClickListener(object :CutomerRecyclerAdapter.onItemClickListener{
+            override fun onitemClick(position: Int) {
+                val intent= Intent(context,BookyourSeat::class.java)
+                intent.putExtra("menu",menuList[position])
+                context!!.startActivity(intent)
+            }
+
+        })
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_restaurant, container, false)
+        val view= inflater.inflate(R.layout.fragment_restaurant, container, false)
+
+        recyclerView=view!!.findViewById(R.id.recyclerViewRestaurantCustomer)
+        recyclerView.layoutManager= LinearLayoutManager(context)
+        loadData()
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RestaurantFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RestaurantFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }

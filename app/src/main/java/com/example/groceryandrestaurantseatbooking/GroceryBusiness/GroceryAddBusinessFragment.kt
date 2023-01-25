@@ -52,12 +52,13 @@ class GroceryAddBusinessFragment : Fragment() {
         recyclerView.layoutManager=LinearLayoutManager(context)
         db=FirebaseFirestore.getInstance()
 
-        val userId=Firebase.auth.currentUser!!.uid
-        db.collection(userId).get().addOnSuccessListener {
+        val userEmail=Firebase.auth.currentUser!!.email
+        db.collection("Grocery").document(userEmail.toString()).collection("CurrentStocks")
+            .get().addOnSuccessListener {
             if(!it.isEmpty){
                 for(data in it.documents){
                     Log.d("data","${data.get("Itemname")}")
-                    val grocery=Grocery(data.get("Itemname").toString(),data.get("Itemdesc").toString(),data.get("Itemprice").toString())
+                    val grocery=Grocery(data.get("Itemname").toString(),data.get("Itemdesc").toString(),data.get("Itemprice").toString(),data.get("Email").toString())
                     if(grocery!=null){
                         groceryList.add(grocery)
                     }

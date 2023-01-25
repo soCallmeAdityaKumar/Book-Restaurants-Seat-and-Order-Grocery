@@ -46,12 +46,13 @@ class MenuAddFragmentBusiness : Fragment() {
         recyclerView.layoutManager= LinearLayoutManager(context)
         db= FirebaseFirestore.getInstance()
 
-        val userId=Firebase.auth.currentUser!!.uid
-        db.collection(userId).get().addOnSuccessListener {
+        val userEmail=Firebase.auth.currentUser!!.email
+        db.collection("Restaurant").document(userEmail.toString()).collection("CurrentMenu")
+            .get().addOnSuccessListener {
             if(!it.isEmpty){
                 for(data in it.documents){
                     Log.d("data","${data.get("Itemname")}")
-                    val menu=Menu(data.get("Itemname").toString(),data.get("Itemdesc").toString(),data.get("Itemprice").toString())
+                    val menu=Menu(data.get("Itemname").toString(),data.get("Itemdesc").toString(),data.get("Itemprice").toString(),data.get("Email").toString())
                     if(menu!=null){
                         menuList.add(menu)
                     }

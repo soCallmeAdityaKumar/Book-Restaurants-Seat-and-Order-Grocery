@@ -3,6 +3,8 @@ package com.example.groceryandrestaurantseatbooking
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.example.groceryandrestaurantseatbooking.Customer.GroceryFragment
+import com.example.groceryandrestaurantseatbooking.Customer.RestaurantFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

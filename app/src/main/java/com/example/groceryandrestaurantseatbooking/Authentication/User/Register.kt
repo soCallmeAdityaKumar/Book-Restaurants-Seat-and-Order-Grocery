@@ -7,6 +7,7 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.example.groceryandrestaurantseatbooking.Authentication.Business.BusinessRegister
 import com.example.groceryandrestaurantseatbooking.R
 
 class Register:AppCompatActivity() {
@@ -22,7 +23,11 @@ class Register:AppCompatActivity() {
         val nameEdit:EditText=findViewById(R.id.NameEditText)
         val registerButton=findViewById<Button>(R.id.Registerbutton)
         val loginTextView:TextView=findViewById(R.id.LoginTextView)
+        val businessRegister:TextView=findViewById(R.id.BusinessRegisterText)
 
+        businessRegister.setOnClickListener {
+            startActivity(Intent(this,BusinessRegister::class.java))
+        }
         loginTextView.setOnClickListener {
             startActivity(Intent(this, LoginUser::class.java))
         }

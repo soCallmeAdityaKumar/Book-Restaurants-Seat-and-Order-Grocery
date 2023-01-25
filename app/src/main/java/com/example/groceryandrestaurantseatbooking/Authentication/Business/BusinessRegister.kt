@@ -1,18 +1,19 @@
-package com.example.groceryandrestaurantseatbooking.Authentication
+package com.example.groceryandrestaurantseatbooking.Authentication.Business
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.groceryandrestaurantseatbooking.R
-import org.w3c.dom.Text
 
 class BusinessRegister:AppCompatActivity() {
-    lateinit var viewModel:BusinessRegisterViewModel
+    lateinit var viewModel: BusinessRegisterViewModel
     var grocery:Boolean=false
     var restaurant:Boolean=false
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,23 +27,27 @@ class BusinessRegister:AppCompatActivity() {
         val registerButton: Button =findViewById(R.id.RegisterBusinessbutton)
         val groceryRadioButton:RadioButton=findViewById(R.id.GroceryradioButton)
         val restaurantRadioButton:RadioButton=findViewById(R.id.RestaurantsRadioButton)
+        val radioGroup:RadioGroup=findViewById(R.id.RadioGroup)
 
+        radioGroup.setOnCheckedChangeListener { radioGroup, id ->
+            val radioButton=findViewById<RadioButton>(id)
+           when(radioButton){
+               groceryRadioButton->{grocery=true}
+               restaurantRadioButton->{restaurant=true}
+           }
+
+            Log.d("radiogroup","$grocery and  $restaurant")
+            viewModel.grocery=grocery
+            viewModel.restaurant=restaurant
+        }
 
         viewModel=ViewModelProvider(this).get(BusinessRegisterViewModel::class.java)
 
-
-        if(groceryRadioButton.isSelected){
-            grocery=true
-
-        }else if(restaurantRadioButton.isSelected){
-            restaurant=true
-        }
         loginBusinessTextView.setOnClickListener {
-            startActivity(Intent(this,LoginBusiness::class.java))
+            startActivity(Intent(this, LoginBusiness::class.java))
         }
-
         registerButton.setOnClickListener {
-            val business=Business(businessName.text.toString(),businessEmail.text.toString(),BusinessphoneNumber.text.toString(),passwordBusiness.text.toString())
+            val business= Business(businessName.text.toString(),businessEmail.text.toString(),BusinessphoneNumber.text.toString(),passwordBusiness.text.toString())
             viewModel.startBusinessRegisViewModel(business,this)
         }
 

@@ -69,10 +69,10 @@
         android:id="@+id/BusinessLoginText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:text="Business"
-        android:textSize="20dp"
         android:textColor="#FAE0E4"
-        android:layout_marginTop="10dp"
+        android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SignupTextView" />

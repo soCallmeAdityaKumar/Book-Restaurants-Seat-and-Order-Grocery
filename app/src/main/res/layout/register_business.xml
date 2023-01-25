@@ -10,10 +10,11 @@
         android:id="@+id/RegisterBusinessTextView"
         android:layout_width="285dp"
         android:layout_height="wrap_content"
-        android:text="Register Customer"
+        android:layout_marginTop="64dp"
+        android:text="Register Businessman"
         android:textAlignment="center"
         android:textColor="#FAE0E4"
-        android:textSize="32dp"
+        android:textSize="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -74,13 +75,13 @@
         android:id="@+id/RegisterBusinessbutton"
         android:layout_width="200dp"
         android:layout_height="44dp"
-        android:layout_marginTop="91dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/round_button"
         android:backgroundTint="#a53860"
         android:text="Register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordBusinessEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/RadioGroup" />
 
     <TextView
         android:id="@+id/LoginBusinessTextView"
@@ -103,25 +104,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginBusinessTextView" />
 
-    <RadioButton
-        android:id="@+id/GroceryradioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Grocery"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordBusinessEditText" />
 
-    <RadioButton
-        android:id="@+id/RestaurantsRadioButton"
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/RadioGroup"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Restaurant"
+        android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/GroceryradioButton"
-        app:layout_constraintTop_toBottomOf="@+id/PasswordBusinessEditText" />
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PasswordBusinessEditText">
+        <RadioButton
+            android:id="@+id/GroceryradioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginBottom="10dp"
+            android:text="Grocery"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/PasswordBusinessEditText" />
+
+        <RadioButton
+            android:id="@+id/RestaurantsRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="10dp"
+            android:text="Restaurant"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/GroceryradioButton"
+            app:layout_constraintTop_toBottomOf="@+id/PasswordBusinessEditText" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,11 +2,13 @@ package com.example.groceryandrestaurantseatbooking.Authentication.User
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import com.example.groceryandrestaurantseatbooking.Authentication.Business.LoginBusiness
 import com.example.groceryandrestaurantseatbooking.R
 
 class LoginUser:AppCompatActivity() {
@@ -21,7 +23,10 @@ class LoginUser:AppCompatActivity() {
 
         val business:TextView=findViewById(R.id.BusinessLoginText)
 
-
+        business.setOnClickListener {
+            Log.d("LoginUser","Business text clicked")
+            startActivity(Intent(this,LoginBusiness::class.java))
+        }
          loginViewModel=ViewModelProvider(this).get(LoginViewModel::class.java)
 
         signupText.setOnClickListener {

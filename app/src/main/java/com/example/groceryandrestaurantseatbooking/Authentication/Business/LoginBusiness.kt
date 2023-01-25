@@ -1,4 +1,4 @@
-package com.example.groceryandrestaurantseatbooking.Authentication
+package com.example.groceryandrestaurantseatbooking.Authentication.Business
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.groceryandrestaurantseatbooking.R
 
@@ -16,7 +15,6 @@ class LoginBusiness:AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.business_login)
 
-        val loginBusinessTextView:TextView=findViewById(R.id.LoginBusinessText)
         val loginEmailBusinessEditText:EditText=findViewById(R.id.LoginEmailBusinessEdit)
         val loginPasswordBusiness:EditText=findViewById(R.id.LoginPasswordBusinessEdit)
         val loginBusiness:Button=findViewById(R.id.LoginBusinessButton)
@@ -26,7 +24,7 @@ class LoginBusiness:AppCompatActivity() {
 
 
         registerBusinessTextView.setOnClickListener {
-            startActivity(Intent(this,BusinessRegister::class.java))
+            startActivity(Intent(this, BusinessRegister::class.java))
         }
 
         loginBusiness.setOnClickListener {
